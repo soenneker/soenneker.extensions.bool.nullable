@@ -1,4 +1,4 @@
-# Contributing to Soenneker.Extensions.Bool.Nullable
+﻿# Contributing to Soenneker.Extensions.Bool.Nullable
 
 We're excited that you're interested in contributing!
 
