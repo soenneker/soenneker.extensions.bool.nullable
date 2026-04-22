@@ -1,11 +1,10 @@
 using AwesomeAssertions;
-using Xunit;
 
 namespace Soenneker.Extensions.Bool.Nullable.Tests;
 
 public class NullableBoolExtensionTests
 {
-    [Fact]
+    [Test]
     public void IsNullOrFalse_ShouldReturnTrue_WhenValueIsNull()
     {
         // Arrange
@@ -18,7 +17,7 @@ public class NullableBoolExtensionTests
         result.Should().BeTrue();
     }
 
-    [Fact]
+    [Test]
     public void IsNullOrFalse_ShouldReturnTrue_WhenValueIsFalse()
     {
         // Arrange
@@ -31,7 +30,7 @@ public class NullableBoolExtensionTests
         result.Should().BeTrue();
     }
 
-    [Fact]
+    [Test]
     public void IsNullOrFalse_ShouldReturnFalse_WhenValueIsTrue()
     {
         // Arrange
