@@ -18,7 +18,11 @@ public static class NullableBoolExtension
         return value != true;
     }
 
-    /// <returns>"Yes" or "No" or "null"</returns>
+    /// <summary>
+    /// Converts a nullable Boolean to <c>Yes</c>, <c>No</c>, or <c>Null</c>.
+    /// </summary>
+    /// <param name="value">The nullable Boolean value to format.</param>
+    /// <returns><c>Yes</c>, <c>No</c>, or <c>Null</c>.</returns>
     [Pure]
     public static string ToYesNoNullable(this bool? value)
     {
@@ -28,7 +32,11 @@ public static class NullableBoolExtension
         return value.Value ? "Yes" : "No";
     }
 
-    /// <returns>"Yes" or "No" or "null"</returns>
+    /// <summary>
+    /// Converts a nullable Boolean to <c>yes</c>, <c>no</c>, or <c>null</c>.
+    /// </summary>
+    /// <param name="value">The nullable Boolean value to format.</param>
+    /// <returns><c>yes</c>, <c>no</c>, or <c>null</c>.</returns>
     [Pure]
     public static string ToYesNoNullableLower(this bool? value)
     {
