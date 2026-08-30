@@ -5,7 +5,7 @@
 
 # ![](https://user-images.githubusercontent.com/4441470/224455560-91ed3ee7-f510-4041-a8d2-3fc093025112.png) Soenneker.Extensions.Bool.Nullable
 
-A collection of helpful bool? extension methods.
+Checks nullable Booleans and formats all three states as fixed English text.
 
 ## Installation
 
@@ -13,17 +13,26 @@ A collection of helpful bool? extension methods.
 dotnet add package Soenneker.Extensions.Bool.Nullable
 ```
 
-## Quick start
+## Usage
 
 ```csharp
 using Soenneker.Extensions.Bool.Nullable;
 
-bool? value = true;
-var result = value.IsNullOrFalse();
+bool? value = null;
+
+bool missingOrDisabled = value.IsNullOrFalse(); // true
+string display = value.ToYesNoNullable();       // "Null"
+string lower = value.ToYesNoNullableLower();    // "null"
 ```
 
-## Common operations
+## Exact mappings
 
-- `IsNullOrFalse()` - Shorthand for checking if a nullable bool is null or false.
-- `ToYesNoNullable()` - Returns "Yes" or "No" or "null".
-- `ToYesNoNullableLower()` - Returns "Yes" or "No" or "null".
+| Input | `IsNullOrFalse()` | `ToYesNoNullable()` | `ToYesNoNullableLower()` |
+| --- | --- | --- | --- |
+| `true` | `false` | `"Yes"` | `"yes"` |
+| `false` | `true` | `"No"` | `"no"` |
+| `null` | `true` | `"Null"` | `"null"` |
+
+`IsNullOrFalse()` deliberately collapses `false` and `null`. Do not use it when “not supplied” and “explicitly disabled” have different domain meanings; check `HasValue` or pattern-match the three states instead.
+
+The text methods are deterministic and culture-invariant. They are intended for simple display or fixed text contracts, not localization, parsing, or JSON serialization. They return the literal word `Null`, not a null string reference.

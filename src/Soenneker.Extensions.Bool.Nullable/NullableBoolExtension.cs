@@ -3,15 +3,15 @@ using System.Diagnostics.Contracts;
 namespace Soenneker.Extensions.Bool.Nullable;
 
 /// <summary>
-/// A collection of helpful bool? extension methods
+/// Provides checks and fixed English formatting for nullable Boolean values.
 /// </summary>
 public static class NullableBoolExtension
 {
     /// <summary>
-    /// Shorthand for checking if a nullable bool is null or false
+    /// Returns whether the value is either <see langword="null"/> or <see langword="false"/>.
     /// </summary>
-    /// <param name="value"></param>
-    /// <returns></returns>
+    /// <param name="value">The nullable Boolean to check.</param>
+    /// <returns><see langword="true"/> unless <paramref name="value"/> is explicitly <see langword="true"/>.</returns>
     [Pure]
     public static bool IsNullOrFalse(this bool? value)
     {
